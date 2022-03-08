@@ -8,7 +8,7 @@ const Songs = () => {
     <div className="flex flex-col px-0 space-y-1 pb-28 text-white">
       {
         playlist?.tracks.items.map((track,i)=>
-        ( <Song key={track.id} track={track} order={i}/>)
+        ( <Song key={track.track.id} track={track} order={i}/>)
         )
       }
 

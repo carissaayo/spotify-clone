@@ -9,7 +9,7 @@ const Song = ({order,track}) => {
     const [currentTrackId,setCurrentTrackId] =useRecoilState(currentTrackIdState);
     const [isPlaying,setIsPlaying] = useRecoilState(isPlayingState);
     const playSong= ()=>{
-      setCurrentTrackId(track.track.id.id);
+      setCurrentTrackId(track.track.id);
       setIsPlaying(true);
       spotifyApi.play({uris:[track.track.uri]})
     }
@@ -29,7 +29,7 @@ const Song = ({order,track}) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between ml-auto md:ml-0">
+      <div className="flex items-center justify-between ml-auto md:ml-8">
         <p className="w-40 hidden md:inline"> {track.track.album.name}</p>
         <p className="">
           {millisToMinutesAndSeconds(track.track.duration_ms)}
